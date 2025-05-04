@@ -11,7 +11,8 @@ const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: async (req, file) => ({
     folder: 'wanderlust_DEV',
-    allowed_formats: ['jpg', 'png', 'jpeg']
+    allowed_formats: ['jpg', 'png', 'jpeg'],
+    timestamp: Math.floor(Date.now() / 1000),  // <-- Add this
   }),
 });
 
